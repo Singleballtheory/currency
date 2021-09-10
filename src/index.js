@@ -8,7 +8,7 @@ function getElements(response) {
   let country = $('#country').val();
   if (country === "USD") {
     let USDAmount = $('#dollarAmount').val() * response.conversion_rates.USD;
-    $('.showMoney').html(`This exchange equates to $${USDAmount} dollars, which is exactly what you already have Charlie!`);
+    $('.showMoney').html(`This exchange equates to $${USDAmount} dollars, which is exactly what you already have Charlie! You're in America right now!!`);
   }  else if (country === "AED") {
     let AEDAmount = $('#dollarAmount').val() * response.conversion_rates.AED;
     $('.showMoney').html(`This exchange equates to ${AEDAmount} dirhams.`);
