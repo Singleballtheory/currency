@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('#showMoney').val("");
 
     let request = new XMLHttpRequest();
-    const url = `https://v6.exchangerate-api.com/v6/c10b158a3ffbea4285694a74/latest/USD`;
+    const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
 
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
