@@ -7,19 +7,19 @@ import Service from './service.js';
 function getElements(response) {
   let country = $('#country').val();
   if (country === "USD") {
-    let USDAmount = $('#dollarAmount').val() * response.conversion_rates.USD;
+    let USDAmount = Math.round($('#dollarAmount').val() * response.conversion_rates.USD);
     $('.showMoney').html(`This exchange equates to $${USDAmount} dollars, which is exactly what you already have Charlie! You're in America right now!!`);
   }  else if (country === "AED") {
-    let AEDAmount = $('#dollarAmount').val() * response.conversion_rates.AED;
+    let AEDAmount = Math.round($('#dollarAmount').val() * response.conversion_rates.AED);
     $('.showMoney').html(`This exchange equates to ${AEDAmount} dirhams.`);
   }  else if (country === "AUD") {
-    let AUDAmount = $('#dollarAmount').val() * response.conversion_rates.AUD;
+    let AUDAmount =Math.round($('#dollarAmount').val() * response.conversion_rates.AUD);
     $('.showMoney').html(`This exchange equates to ${AUDAmount} Australian dollars.`);
   }  else if (country === "EUR") {
-    let EURAmount = $('#dollarAmount').val() * response.conversion_rates.EUR;
+    let EURAmount = Math.round($('#dollarAmount').val() * response.conversion_rates.EUR);
     $('.showMoney').html(`This exchange equates to ${EURAmount} euros.`);
   }  else if (country === "MXN") {
-    let MXNAmount = $('#dollarAmount').val() * response.conversion_rates.MXN;
+    let MXNAmount = Math.round($('#dollarAmount').val() * response.conversion_rates.MXN);
     $('.showMoney').html(`This exchange equates to ${MXNAmount} pesos.`);
   }  else if (country === "JOB") {
     let JOBAmount = $('#dollarAmount').val() * response.conversion_rates.JOB;
