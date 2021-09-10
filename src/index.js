@@ -21,6 +21,9 @@ function getElements(response) {
   }  else if (country === "MXN") {
     let MXNAmount = $('#dollarAmount').val() * response.conversion_rates.MXN;
     $('.showMoney').html(`This exchange equates to ${MXNAmount} pesos.`);
+  }  else if (country === "JOB") {
+    let JOBAmount = $('#dollarAmount').val() * response.conversion_rates.JOB;
+    $('.showMoney').html(`Jobland? You want to go to Jobland, Charlie? Where Jobs grow on Jobbies?! You get ${JOBAmount} dollars, Charlie! That means Not a Number! Nothing! You know why?! Because Jobland doesn't exist, Charlie!!`);
   }  else {
   $('.showErrors').text(`There was an error: ${response.message}`);
   }
