@@ -5,8 +5,8 @@ import './css/styles.css';
 import Service from './service.js';
 
 function getElements(response) {
-  if (response.name) {
-    $('.showMoney').html(`The exchange of ${response.name} is equal to ${response.conversion_rates.USD}`);
+  if (response.conversion_rates.AED) {
+    $('.showMoney').html(`The exchange of x dollars is equal to ${response.conversion_rates.USD}`);
   }  else {
     $('.showErrors').text(`There was an error: ${response.message}`);
   }
