@@ -4,22 +4,34 @@
 </head>
 <body>
   <div class="container">
-    <h1>For To Go Places Exchanger</h1>
+    <div class="jumbotron">
+    <h1>Charlie Travels Abroad</h1>
+    </div>
     <div>
       <label for="country">Where Go?</label>
-      <select id="country">
+      <div>
+      <select id="country" class="custom-select" style="width: 200px;">
         <option value="USD">United States</option>
         <option value="AED">United Arab Emerites</option>
         <option value="AUD">Australia</option>
         <option value="EUR">European Union</option>
         <option value="MXN">Mexico</option>
         <option value="JOB">Jobland</option>
+      </select>
+      <div>
+        <br>
       <label for="dollarAmount">Money Me.</label>
-      <input id="dollarAmount" type="number">
+      </div>
+      <input id="dollarAmount" type="number" class="custom-select" style="width: 200px">
+    </div>
+      <br>
       <button class="btn-success" id="exchangeMoney">Me Money Now:</button>
     </div>
-    <div class="showMoney"></div>
-    <div class="showErrors"></div>
+    <br>
+    <div class="col-md-4">
+      <div class="showMoney"></div>
+      <div class="showErrors"></div>
+    </div>
   </div>
 </body>
 </html>
