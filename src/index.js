@@ -7,10 +7,13 @@ import Service from './service.js';
 function getElements(response) {
   let country = $('#country').val();
   if (country === "USD") {
-    let convertedAmount = $('#dollarAmount').val() * response.conversion_rates.USD;
-    $('.showMoney').html(`The exchange of x dollars is equal to ${convertedAmount}`);
-  }  else {
-    $('.showErrors').text(`There was an error: ${response.message}`);
+    let USDAmount = $('#dollarAmount').val() * response.conversion_rates.USD;
+    $('.showMoney').html(`This exchange equates to $${USDAmount} dollars, which is exactly what you already have Charlie!`);
+  } else if (country === "AED") {
+    let AEDAmount = $('#dollarAmount').val() * response.conversion_rates.AED;
+    $('.showMoney').html(`This exchange equates to ${AEDAmount} dirhams.`);
+  } else {
+  $('.showErrors').text(`There was an error: ${response.message}`);
   }
 }
 
@@ -22,20 +25,5 @@ $(document).ready(function() {
       }).catch(function(){
         ('.showErrors').text('This is an error');
       });
-    // const cash = $('#showMoney').val();
-    // $('#showMoney').val("");
   });
 });
-
-// let request = new XMLHttpRequest();
-// const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
-
-// request.onreadystatechange = function() {
-//   if (this.readyState === 4 && this.status === 200) {
-//     const response = JSON.parse(this.responseText);
-//     getElements(response);
-//   }
-// };
-
-// request.open("GET", url, true);
-// request.send();
