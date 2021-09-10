@@ -2,6 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import Service from './service.js';
 
 
 $(document).ready(function() {
@@ -10,7 +11,7 @@ $(document).ready(function() {
     $('#showMoney').val("");
 
     let request = new XMLHttpRequest();
-    const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}`;
+    const url = `https://v6.exchangerate-api.com/v6/c10b158a3ffbea4285694a74/latest/USD`;
 
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
@@ -23,7 +24,11 @@ $(document).ready(function() {
     request.send();
 
    function getElements(response) {
-      $('.showMoney').html(`${response.conversion_rates}`);
+     if (response.name) {
+       $('.showMoney').html(`The exchange of ${response.name} is equal to ${response.conversion_rates.USD}`);
+     }  else {
+      $('.showErrors').text(`There was an error: ${response.message}`);
+     }
     }
   });
 });
