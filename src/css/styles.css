@@ -1,0 +1,26 @@
+h1 {
+  font-family: 'Lucida Grande';
+  font-style: oblique;
+  font-size: 100px;
+  color:rgb(253, 253, 252);
+}
+
+body {
+  background-image: url(https://uproxx.com/wp-content/uploads/2016/03/charlie-its-always-sunny-dayman.jpg?w=978);
+  background-size: cover;
+  background-position: top;
+}
+
+.jumbotron {
+  background: black;
+}
+
+div {
+  color: white;
+}
+
+.showMoney {
+  color: black;
+  background-color:rgb(202, 207, 197);
+  opacity: .7;
+}
